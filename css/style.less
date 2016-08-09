@@ -1,0 +1,73 @@
+@main-green: #e3e0cf;
+@light-green: #c5d5cb;
+@dark-green: #9fa8a3;
+@highlight-red: #B54545;
+
+
+body {
+    padding-top: 50px;
+    font-family: 'EB Garamond', serif;
+    font-family: 'Lora', serif;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 18px;
+}
+
+a {
+    color: @dark-green;
+}
+
+.nav-pills > li > a {
+	font-size: 22px;
+}
+
+.nav-pills > li.active > a, .nav-pills > li.active > a:focus, .nav-pills > li.active > a:hover {
+    color: #FFF;
+    background-color: @dark-green;
+}
+
+.header {
+	margin-bottom: 20px;
+}
+.header h3 {
+	margin-top: 0px;
+}
+
+section {
+	margin: 20px 0;
+	padding: 20px 0;
+}
+
+.btn {
+	font-size: 18px;
+}
+.btn-default {
+    color: #FFF;
+    background-color: @dark-green;;
+    border-color: @dark-green - #111;
+}
+
+.btn-default:hover, .btn-default.focus, .btn-default:focus {
+    color: #333;
+    background-color: #E6E6E6;
+    border-color: #E6E6E6;
+}
+
+section h3 {
+	color: @highlight-red;
+	font-family: sans-serif;
+	text-transform: uppercase;
+	font-weight: 300;
+}
+
+.highlight-section, #page-footer {
+	background-color: @main-green;
+}
+
+#testimony {
+	background-color: #fff;
+	padding: 40px 20px;
+}
+
+#page-footer {
+	padding: 40px 0;
+}
