@@ -1,19 +1,23 @@
 @main-green: #e3e0cf;
 @light-green: #c5d5cb;
-@dark-green: #9fa8a3;
+@dark-green: #1C731C;
 @highlight-red: #B54545;
+@orange: #CC9933;
 
 
 body {
     padding-top: 50px;
-    font-family: 'EB Garamond', serif;
     font-family: 'Lora', serif;
     font-family: 'Libre Baskerville', serif;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 a {
     color: @dark-green;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+	font-weight: 700;
 }
 
 .nav-pills > li > a {
@@ -52,11 +56,28 @@ section {
     border-color: #E6E6E6;
 }
 
+section h2 {
+	color: @orange;
+	margin: 0 0 40px 0;
+}
+
 section h3 {
 	color: @highlight-red;
 	font-family: sans-serif;
 	text-transform: uppercase;
 	font-weight: 300;
+}
+
+.front-page-section {
+	margin: 80px 0;
+}
+
+.front-page-section .highlight-section {
+	padding: 50px;
+}
+
+.highlight-section {
+	padding: 100px 50px;	
 }
 
 .highlight-section, #page-footer {
@@ -65,7 +86,12 @@ section h3 {
 
 #testimony {
 	background-color: #fff;
-	padding: 40px 20px;
+	padding: 80px 40px;
+	margin-bottom: 60px;
+}
+
+#about-me-image {
+	margin: 0 auto 40px auto;
 }
 
 #page-footer {
