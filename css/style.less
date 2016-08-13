@@ -8,7 +8,7 @@ body {
     padding-top: 50px;
     font-family: 'Lora', serif;
     font-size: 16px;
-    background: url("../img/swirl_pattern.png");
+    background: url("../img/swirl_pattern3.png");
 }
 
 a {
@@ -37,6 +37,11 @@ a:focus, a:hover {
     color: #333;
     background-color: #E6E6E6;
     border-color: #E6E6E6;
+}
+
+.navbar {
+    height: 100px;
+    padding-top: 20px;
 }
 
 .navbar-inverse {
@@ -69,7 +74,13 @@ a:focus, a:hover {
 }
 
 .navbar-inverse .navbar-brand {
-	color: #fff;
+	color: @yellow;
+	font-size: 30px;
+	font-family: 'Caveat', cursive;
+}
+
+.navbar-inverse .navbar-brand img {
+	max-width: 10px;
 }
 
 .navbar-inverse .navbar-brand:hover, 
@@ -99,12 +110,13 @@ a:focus, a:hover {
 .header h1 {
 	font-size: 70px;
 	color: @yellow;
-	margin-top: 0;
+	margin: 0 0 0 0;
 }
 
 .header h2 {
 	color: @light-green;
 	font-size: 50px;
+	margin: -5px 0 0 0;
 }
 
 .header h1, .header h2 {
@@ -114,8 +126,8 @@ a:focus, a:hover {
 
 .header img {
 	float: left;
-	margin: 20px 20px 0 0;
-
+	margin: 10px 10px 0 0;
+	max-width: 70px;
 }
 
 section {
@@ -152,7 +164,7 @@ section h3 {
 	padding: 100px 50px;	
 }
 
-.highlight-section, #page-footer {
+.highlight-section {
 	background-color: #fff;
 }
 
@@ -162,4 +174,5 @@ section h3 {
 
 #page-footer {
 	padding: 40px 0;
+	background-color: @grey;
 }
