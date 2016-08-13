@@ -15,7 +15,8 @@
     <script src="js/less.js""></script>
 
     <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700" rel="stylesheet">
+
+    <link href='https://fonts.googleapis.com/css?family=Shadows+Into+Light+Two|Caveat:400,700' rel='stylesheet' type='text/css'>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -25,30 +26,60 @@
     <![endif]-->
   </head>
   <body>
-    <div class="container">
-      <div class="header clearfix">
-        <nav>
-          <ul class="nav nav-pills pull-right">
-            <li role="presentation" class="active"><a href="#">Home</a></li>
-            <li role="presentation"><a href="#">About</a></li>
-            <li role="presentation"><a href="#">Contact</a></li>
+    <nav class="navbar navbar-inverse  navbar-fixed-top">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Needle Therapy</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a href="#">Link <span class="sr-only">(current)</span></a></li>
+            <li><a href="#">Link</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+              </ul>
+            </li>
           </ul>
-        </nav>
-        <h3 class="text-muted">Needle Therapy</h3>
-        <section class="row"> 
-          <div class="col-md-12">
-            <img class="img-responsive" src="http://placehold.it/1200x350" />
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+
+    <div class="container-fluid header">
+      <div class="container">
+        <img id="header-image" class="img-responsive" src="img/logo_green_star.png" />
+
+        <h1 id="site-title">Needle Therapy</h1>
+        <h2 id="site-sub-title">Acupuncture and Nutrition</h1>
+        <!-- <img id="header-image" class="img-responsive" src="img/logo2.png" /> -->
+      </div>
+    </div>
+    <div class="container">
+        <section class="row front-page-section"> 
+          <div class="col-sm-6">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id sollicitudin urna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Proin a tincidunt ipsum, eu pellentesque ante. Suspendisse laoreet nibh at libero gravida pharetra. Morbi dapibus consectetur erat at vestibulum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id sollicitudin urna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Proin a tincidunt ipsum, eu pellentesque ante. Suspendisse laoreet nibh at libero gravida pharetra. Morbi dapibus consectetur erat at vestibulum.</p>
+          </div> <!-- /.col -->
+          <div class="col-sm-6">
+             <img class="img-responsive" src="http://placehold.it/600x400" />
           </div> <!-- /.col -->
         </section> <!-- /.row -->
-      </div> <!-- /.header -->
-    </div> <!-- /.container -->
+    </div> <!-- /.container -->   
+
     <section class="container-fluid highlight-section">
       <div class="container"> 
-        <div class="row"> 
-          <div id="testimony" class="col-md-8 col-md-offset-2 text-center">
-            <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id sollicitudin urna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id sollicitudin urna. Interdum et malesuada fames ac ante ipsum primis in faucibus.</h4>
-          </div> <!-- /.col -->
-        </div> <!-- /.row -->
         <div id="services" class="row"> 
           <div class="col-md-12 text-center">
             <h2>Services</h2>
@@ -70,7 +101,7 @@
           </div> <!-- /.col -->
         </div> <!-- /.row -->
       </div> <!-- /.container -->
-    </section> <!-- /.container-fluid -->
+    </section> <!-- /.highlight-section -->
     <div class="container">
        <section class="row front-page-section"> 
           <div class="col-md-12">
@@ -106,7 +137,7 @@
         <section class="row front-page-section"> 
           <div class="col-md-8 col-md-offset-2 text-center">
           <img id="about-me-image" class="img-responsive img-circle" src="http://placehold.it/200x200" />
-            <h2 class="text-center front-page-title">About Eleanor</h2>
+            <h2 class="text-center">About Eleanor</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id sollicitudin urna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Proin a tincidunt ipsum, eu pellentesque ante. Suspendisse laoreet nibh at libero gravida pharetra. Morbi dapibus consectetur erat at vestibulum.</p>
           </div> <!-- /.col -->
         </section> <!-- /.row -->
@@ -143,5 +174,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/needletherapy.js"></script>
   </body>
 </html>

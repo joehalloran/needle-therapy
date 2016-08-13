@@ -1,44 +1,27 @@
-@main-green: #e3e0cf;
-@light-green: #c5d5cb;
-@dark-green: #1C731C;
-@highlight-red: #B54545;
-@orange: #CC9933;
+@grey: #f0eceb;
+@yellow: #F38A14;
+@light-green: #729f98;
+@dark-green: #283018;
 
 
 body {
     padding-top: 50px;
     font-family: 'Lora', serif;
-    font-family: 'Libre Baskerville', serif;
     font-size: 16px;
+    background: url("../img/swirl_pattern.png");
 }
 
 a {
+    color: @light-green;
+}
+
+a:focus, a:hover {
     color: @dark-green;
+    text-decoration: underline;
 }
 
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
 	font-weight: 700;
-}
-
-.nav-pills > li > a {
-	font-size: 22px;
-}
-
-.nav-pills > li.active > a, .nav-pills > li.active > a:focus, .nav-pills > li.active > a:hover {
-    color: #FFF;
-    background-color: @dark-green;
-}
-
-.header {
-	margin-bottom: 20px;
-}
-.header h3 {
-	margin-top: 0px;
-}
-
-section {
-	margin: 20px 0;
-	padding: 20px 0;
 }
 
 .btn {
@@ -46,8 +29,8 @@ section {
 }
 .btn-default {
     color: #FFF;
-    background-color: @dark-green;;
-    border-color: @dark-green - #111;
+    background-color: @light-green;
+    border-color: @light-green - #111;
 }
 
 .btn-default:hover, .btn-default.focus, .btn-default:focus {
@@ -56,14 +39,99 @@ section {
     border-color: #E6E6E6;
 }
 
+.navbar-inverse {
+    background-color: @light-green;
+    border-radius: 0;
+    border: none;
+}
+
+.navbar-inverse .navbar-brand {
+	color: #fff;
+}
+
+.navbar-inverse .navbar-toggle {
+    border-color: #fff;
+}
+
+.navbar-inverse .navbar-toggle:active .icon-bar, 
+.navbar-inverse .navbar-toggle:focus .icon-bar, 
+.navbar-inverse .navbar-toggle:hover .icon-bar,
+.navbar-inverse .navbar-toggle:visited .icon-bar  {
+    background-color: @light-green;
+}
+
+.navbar-inverse .navbar-toggle:hover,
+.navbar-inverse .navbar-toggle:active,
+.navbar-inverse .navbar-toggle:focus,
+.navbar-inverse .navbar-toggle:visited {
+	background-color: @dark-green;
+	border-color: @light-green;
+}
+
+.navbar-inverse .navbar-brand {
+	color: #fff;
+}
+
+.navbar-inverse .navbar-brand:hover, 
+.navbar-inverse .navbar-brand:focus {
+	color: @dark-green;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+	color: #fff;
+}
+
+.navbar-inverse .navbar-nav>li>a:focus, .navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a.active {
+	color: @dark-green;
+}
+
+.header {
+	height: 550px;
+	padding-top: 100px;
+	background: url("../img/DSCF1571.jpg") center 20% no-repeat;
+	background: url("../img/hands.jpg") center 40% no-repeat;
+}
+
+.header-box {
+	margin: 0 auto;
+}
+
+.header h1 {
+	font-size: 70px;
+	color: @yellow;
+	margin-top: 0;
+}
+
+.header h2 {
+	color: @light-green;
+	font-size: 50px;
+}
+
+.header h1, .header h2 {
+	font-family: 'Caveat', cursive;
+	
+}
+
+.header img {
+	float: left;
+	margin: 20px 20px 0 0;
+
+}
+
+section {
+	margin: 20px 0;
+	padding: 20px 0;
+}
+
 section h2 {
-	color: @orange;
+	color: @light-green;
 	margin: 0 0 40px 0;
+	font-size: 45px;
 }
 
 section h3 {
-	color: @highlight-red;
-	font-family: sans-serif;
+	color: @yellow;
+	font-family: 'Caveat', cursive;
 	text-transform: uppercase;
 	font-weight: 300;
 }
@@ -77,17 +145,15 @@ section h3 {
 }
 
 .highlight-section {
+	margin-top: 0;
+}
+
+.highlight-section {
 	padding: 100px 50px;	
 }
 
 .highlight-section, #page-footer {
-	background-color: @main-green;
-}
-
-#testimony {
 	background-color: #fff;
-	padding: 80px 40px;
-	margin-bottom: 60px;
 }
 
 #about-me-image {
