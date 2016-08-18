@@ -1,4 +1,4 @@
-@grey: #f0eceb;
+@grey: #EAEAEA;
 @yellow: #F38A14;
 @light-green: #729f98;
 @dark-green: #283018;
@@ -21,7 +21,8 @@ a:focus, a:hover {
 }
 
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
-	font-weight: 700;
+	font-weight: 400;
+	font-family: 'Quattrocento', Georgia, 'Times New Roman', Times, serif;	
 }
 
 .btn {
@@ -40,8 +41,7 @@ a:focus, a:hover {
 }
 
 .navbar {
-    height: 100px;
-    padding-top: 20px;
+    height: 50px;
 }
 
 .navbar-inverse {
@@ -75,8 +75,8 @@ a:focus, a:hover {
 
 .navbar-inverse .navbar-brand {
 	color: @yellow;
-	font-size: 30px;
-	font-family: 'Caveat', cursive;
+	font-size: 20px;
+	font-family: 'Quattrocento', cursive;
 }
 
 .navbar-inverse .navbar-brand img {
@@ -98,36 +98,58 @@ a:focus, a:hover {
 
 .header {
 	height: 550px;
-	padding-top: 100px;
-	background: url("../img/DSCF1571.jpg") center 20% no-repeat;
-	background: url("../img/hands.jpg") center 40% no-repeat;
+	padding-top: 0; //JS Fallback
+	background: url("../img/bg1.jpg") center center no-repeat;
+	background-size: cover;
 }
 
-.header-box {
-	margin: 0 auto;
+#title-boxes {
+	margin-top: calc(25vh);
 }
 
-.header h1 {
-	font-size: 70px;
+
+#header-text-box h1 {
+	font-size: 36px;
 	color: @yellow;
-	margin: 0 0 0 0;
+	margin: 0 0 5px 0;
 }
 
-.header h2 {
+#header-text-box h2 {
 	color: @light-green;
-	font-size: 50px;
+	font-size: 24px;
 	margin: -5px 0 0 0;
+	font-weight: 500;
 }
 
-.header h1, .header h2 {
-	font-family: 'Caveat', cursive;
-	
+@media (min-width: 768px) {
+	#header-text-box h1 {
+		font-size: 50px;
+	}
+
+	#header-text-box h2 {
+		font-size: 30px;
+	}
+
+	#header-img-box {
+		width: 30px;
+	}
 }
 
-.header img {
+#header-text-box h1, #header-text-box h2 {
+	font-family: 'Quattrocento', Georgia, 'Times New Roman', Times, serif;	
+}
+
+#header-text-box {
 	float: left;
+}
+
+#header-img-box {
+	float: left;
+	width: 15px;
+}
+
+#header-img-box img {
 	margin: 10px 10px 0 0;
-	max-width: 70px;
 }
 
 section {
@@ -139,6 +161,12 @@ section h2 {
 	color: @light-green;
 	margin: 0 0 40px 0;
 	font-size: 45px;
+}
+
+@media (min-width: 768px) {
+	section h2 {
+		text-align: center;
+	}
 }
 
 section h3 {
@@ -170,6 +198,7 @@ section h3 {
 
 #about-me-image {
 	margin: 0 auto 40px auto;
+	max-width: 200px;
 }
 
 #page-footer {
