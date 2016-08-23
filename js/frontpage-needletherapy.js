@@ -44,8 +44,6 @@ $(function () {
 	    'overflow': 'hidden',
 	    'height': '100%'
 	});
-	// Hide padding space for navbar-fixed-top
-	$('body').css("paddingTop", 0)
 	var serviceBoxOffset = $('.service-box').offset();
 	console.log(serviceBoxOffset);
 	$('.header').height(  $( window ).height() );
