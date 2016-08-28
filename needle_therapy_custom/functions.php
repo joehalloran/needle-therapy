@@ -9,8 +9,13 @@ function needleTherapy_scripts() {
     // Font Awesome, required for star rating functions
 	wp_enqueue_script('font-awesome', 'https://use.fontawesome.com/322889a4a3.js');	// Enqueue bootstrap javascript
 	wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ), '1.0.0', true );
-	// Enqueue custom css:
-	wp_enqueue_script( 'needletherapy-js',  get_template_directory_uri() . '/js/needletherapy-js', array( 'jquery' ), '1.0.3', true );
+	// Enqueue custom js:
+	wp_enqueue_script( 'needletherapy-js',  get_template_directory_uri() . '/js/needletherapy.js', array( 'jquery' ), '1.0.3', true );
+	if ( is_front_page() ) {	
+		// Enqueue custom js:
+		wp_enqueue_script( 'frontpage-needletherapy-js',  get_template_directory_uri() . '/js/frontpage-needletherapy.js', array( 'jquery' ), '1.0.3', true );
+    }
+
 	// Load main stylesheet:
 	wp_enqueue_style( 'needletherapy-style', get_stylesheet_uri() );
 	// Load google fonts stylesheet.
@@ -56,12 +61,37 @@ endif;
 add_action( 'after_setup_theme', 'needleTherapy_setup' );
 
 
-// remove inline width and height attributes for thumbnail images
-add_filter( 'post_thumbnail_html', 'remove_thumbnail_dimensions', 10, 3 );
 
+/**
+ * Register Custom Navigation Walker include custom menu widget to use walkerclass
+ */
+require_once('inc/wp_bootstrap_navwalker.php');
+require_once('inc/bootstrap-custom-menu-widget.php');
+
+
+/**
+ * Register Custom Navigation Walker include custom menu widget to use walkerclass
+ */
+
+register_nav_menus(
+    array(
+        'main_menu' => 'Main Menu',
+    )
+);
+
+
+// remove inline width and height attributes for thumbnail images
 function remove_thumbnail_dimensions( $html, $post_id, $post_image_id ) {
     $html = preg_replace( '/(width|height)=\"\d*\"\s/', "", $html );
     return $html;
 }
+add_filter( 'post_thumbnail_html', 'remove_thumbnail_dimensions', 10, 3 );
+
+
+// Adjust except length
+function custom_excerpt_length( $length ) {
+	return 40;
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
 ?>
