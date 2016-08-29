@@ -2,7 +2,7 @@
 	
 	<div class="container">
     	<div class="row">
-	    	<article>  
+	    	<section>  
 	    		<div class="col-md-8 col-lg-9">  
 	        		
 	    			<?php
@@ -14,14 +14,11 @@
 				        <? the_content(); ?>
 				        
 					<?php endwhile; else: ?>
-						<p><?php _e('Sorry, no posts matched your criteria.', 'needletherapy'); ?></p>
+						<p><?php _e('Sorry, no content matched your criteria.', 'needletherapy'); ?></p>
 					<?php endif; ?>
-			        <? the_post_navigation( array(
-						'prev_text'          => __( 'Previous', 'needletherapy' ),
-						'next_text'          => __( 'Next', 'needletherapy' ),
-					) ); ?>
+
 				</div> <!-- /.col -->
-			</article>
+			</section>
     		<aside id="sibebar">
     			<div class="col-md-4 col-lg-3">
 			    	<?php get_sidebar(); ?>

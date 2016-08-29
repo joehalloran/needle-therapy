@@ -1,4 +1,4 @@
- <div id="page-footer" class="container-fluid">
+		<footer id="page-footer" class="container-fluid">
 	      <div class="container">
 	        <div class="row">
 	          <div class="col-md-6">
@@ -23,7 +23,7 @@
 	          </div> <!-- /.col -->
 	        </div> <!-- /.row -->
 	      </div> <!-- /.container -->
-	    </div> <!-- /.container-fluid #footer -->
+	    </footer> <!-- /.container-fluid #footer -->
 	</div> <!-- /#main -->
 	<?php wp_footer(); ?>
   </body>

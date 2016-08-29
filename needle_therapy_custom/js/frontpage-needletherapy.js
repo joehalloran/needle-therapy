@@ -10,8 +10,8 @@ $(function () {
 	
 	var secondPhaseAnimation = function(){
 		var animateDuration = 2500;
-		$('.navbar , #main').fadeIn(2500);
-		$( '.header' ).animate({
+		$('.navbar , main, footer').fadeIn(2500);
+		$( '#page-header' ).animate({
 			height: "250px",
 			paddingTop: "25px",
 		}, {
@@ -46,8 +46,8 @@ $(function () {
 	});
 	var serviceBoxOffset = $('.service-box').offset();
 	console.log(serviceBoxOffset);
-	$('.header').height(  $( window ).height() );
-	$('.navbar , #main').hide();
+	$('#page-header').height(  $( window ).height() );
+	$('.navbar , main, footer').hide();
 	// Get combined height of title and subtitile for vertical align
 	var $titleBoxHeight = $('#site-title').outerHeight() + $('#site-sub-title').outerHeight();
 	// MarginTop = screen 50% - combined title heights

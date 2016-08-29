@@ -48,16 +48,18 @@
       </div><!-- /.container-fluid -->
     </nav>
 
-    <div class="container-fluid header">
-      <div class="container">
-      	<div id="title-boxes">
-	      	<div id="header-img-box">
-		        <img  class="img-responsive" src="<?php bloginfo('stylesheet_directory'); ?>/img/logo_yellow_star.png" />
-  		    </div> <!-- /#header-img-box -->
-  		    <div id="header-text-box">
-		        <h1 id="site-title">NeedleTherapy</h1>
-		        <h2 id="site-sub-title">Acupuncture and Nutrition</h2>
-	       </div> <!-- /#header-text-box -->
-       </div> <!-- /#title-boxes -->
-      </div>
-    </div> <!-- /.header -->
+    <header id="page-header">
+      <div class="container-fluid">
+        <div class="container">
+        	<div id="title-boxes">
+  	      	<div id="header-img-box">
+  		        <img  class="img-responsive" src="<?php bloginfo('stylesheet_directory'); ?>/img/logo_yellow_star.png" />
+    		    </div> <!-- /#header-img-box -->
+    		    <div id="header-text-box">
+  		        <h1 id="site-title">NeedleTherapy</h1>
+  		        <h2 id="site-sub-title">Acupuncture and Nutrition</h2>
+  	       </div> <!-- /#header-text-box -->
+         </div> <!-- /#title-boxes -->
+        </div>  <!-- /.container -->
+      </div> <!-- /.container-fluid -->
+    </header> 
