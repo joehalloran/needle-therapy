@@ -1,16 +1,5 @@
-/*
-Theme Name: Needle Therapy
-Theme URI: 
-Author: Joe Halloran
-Author URI: 
-Description: Custom Theme for NeedleTherapy website.
-Version: 1.0
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: needletherapy
-*/
-
-@import url("css/font-awesome.min.css");
+@import url("font-awesome.min.css");
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400,900");
 
 /*
 	Twenty by HTML5 UP
@@ -2406,7 +2395,7 @@ Text Domain: needletherapy
 	#banner {
 		background-attachment: scroll, scroll, scroll, fixed;
 		background-color: #645862;
-		background-image: url("images/acupuncture-points.jpg");
+		background-image: url("../../img/2-cropped.jpg");
 		/*background-image: url("images/light-bl.svg"), url("images/light-br.svg"), url("images/overlay.png"), url("../../images/banner.jpg");*/
 		background-position: bottom left, bottom right, top left, top center;
 		background-repeat: no-repeat, no-repeat, repeat, no-repeat;
