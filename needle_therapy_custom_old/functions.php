@@ -6,22 +6,20 @@ function needleTherapy_scripts() {
 	wp_deregister_script( 'jquery' );
     // Register and load jquery in footer
     wp_register_script( 'jquery', ("https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"), false, NULL, true );
+    // Font Awesome, required for star rating functions
+	wp_enqueue_script('font-awesome', 'https://use.fontawesome.com/322889a4a3.js');	// Enqueue bootstrap javascript
+	wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ), '1.0.0', true );
 	// Enqueue custom js:
 	wp_enqueue_script( 'needletherapy-js',  get_template_directory_uri() . '/js/needletherapy.js', array( 'jquery' ), '1.0.3', true );
+	if ( is_front_page() ) {	
+		// Enqueue custom js:
+		wp_enqueue_script( 'frontpage-needletherapy-js',  get_template_directory_uri() . '/js/frontpage-needletherapy.js', array( 'jquery' ), '1.0.3', true );
+    }
 
-	wp_enqueue_script( 'nt-dropotron-js',  get_template_directory_uri() . '/js/jquery.dropotron.min.js', array( 'jquery' ), '1.0.3', true );
-
-	wp_enqueue_script( 'nt-scrolly-js',  get_template_directory_uri() . '/js/jquery.scrolly.min.js', array( 'jquery' ), '1.0.3', true );
-	wp_enqueue_script( 'nt-scrollgress-js',  get_template_directory_uri() . '/js/jquery.scrollgress.min.js', array( 'jquery' ), '1.0.3', true );
-	wp_enqueue_script( 'nt-skel-js',  get_template_directory_uri() . '/js/skel.min.js', array( 'jquery' ), '1.0.3', true );
-	wp_enqueue_script( 'nt-util-js',  get_template_directory_uri() . '/js/util.js', array( 'jquery' ), '1.0.3', true );
-	// if lte IE8
-	// wp_enqueue_script( 'nt-respond-js',  get_template_directory_uri() . '/js/respond.min.js', array( 'jquery' ), '1.0.3', true );
-	wp_enqueue_script( 'nt-main-js',  get_template_directory_uri() . '/js/main.js', array( 'jquery' ), '1.0.3', true );
 	// Load main stylesheet:
 	wp_enqueue_style( 'needletherapy-style', get_stylesheet_uri() );
 	// Load google fonts stylesheet.
-	wp_enqueue_style( 'google-fonts', "https://fonts.googleapis.com/css?family=Lato:300,400,900" );
+	wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Caveat|Lora|Quattrocento:400,700' );
 	
 }
 add_action( 'wp_enqueue_scripts', 'needleTherapy_scripts' );
@@ -61,6 +59,25 @@ function needleTherapy_setup() {
 }
 endif; 
 add_action( 'after_setup_theme', 'needleTherapy_setup' );
+
+
+
+/**
+ * Register Custom Navigation Walker include custom menu widget to use walkerclass
+ */
+require_once('inc/wp_bootstrap_navwalker.php');
+require_once('inc/bootstrap-custom-menu-widget.php');
+
+
+/**
+ * Register Custom Navigation Walker include custom menu widget to use walkerclass
+ */
+
+register_nav_menus(
+    array(
+        'main_menu' => 'Main Menu',
+    )
+);
 
 
 // remove inline width and height attributes for thumbnail images

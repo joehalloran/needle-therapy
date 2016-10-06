@@ -1,71 +1,202 @@
 <?php get_header(); ?>
-	<main>
-		<div class="container-fluid">
-	        <section>
-	        	<div class="container">
-		        	<div class="row front-page-section"> 
-			          <div class="col-sm-6">
-			            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id sollicitudin urna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Proin a tincidunt ipsum, eu pellentesque ante. Suspendisse laoreet nibh at libero gravida pharetra. Morbi dapibus consectetur erat at vestibulum.</p>
-			            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id sollicitudin urna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Proin a tincidunt ipsum, eu pellentesque ante. Suspendisse laoreet nibh at libero gravida pharetra. Morbi dapibus consectetur erat at vestibulum.</p>
-			          </div> <!-- /.col -->
-			          <div class="col-sm-6">
-			             <img class="img-responsive" src="<?php bloginfo('stylesheet_directory'); ?>/img/2.jpg" />
-			          </div> <!-- /.col -->
-			        </div> <!-- /.row -->
-		        </div> <!-- /.container -->
-	        </section> 
-		    <section>
-		    	<div class="highlight-section">
-				    <div class="container"> 
-				        <div id="services" class="row"> 
-				          <div class="col-md-12">
-				            <h2 class="section-title">Services</h2>
-				          </div> <!-- /.col -->
-				          <div class="col-md-4 service-box">
-				            <h3>Acupuncture</h3>
-				            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id sollicitudin urna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Proin a tincidunt ipsum, eu pellentesque ante. Suspendisse laoreet nibh at libero gravida pharetra. Morbi dapibus consectetur erat at vestibulum.</p>
-				            <button type="button" class="btn btn-default">More</button>
-				          </div> <!-- /.col -->
-				          <div class="col-md-4 service-box">
-				            <h3>Facial Acupuncture</h3>
-				            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id sollicitudin urna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Proin a tincidunt ipsum, eu pellentesque ante. Suspendisse laoreet nibh at libero gravida pharetra. Morbi dapibus consectetur erat at vestibulum.</p>
-				            <button type="button" class="btn btn-default">More</button>
-				          </div> <!-- /.col -->
-				          <div class="col-md-4 service-box">
-				            <h3>Nutritional Therapy</h3>
-				            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id sollicitudin urna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Proin a tincidunt ipsum, eu pellentesque ante. Suspendisse laoreet nibh at libero gravida pharetra. Morbi dapibus consectetur erat at vestibulum.</p>
-				            <button type="button" class="btn btn-default">More</button>
-				          </div> <!-- /.col -->
-				        </div> <!-- /.row -->
-			      </div> <!-- /.container -->
-			    </div> <!-- /.highlight-section -->
-			</section>
-			<section>	
-			    <div class="container">
-			       	<div class="row front-page-section"> 
-			          <div class="col-md-12">
-			            <h2 class="section-title">About Acupuncture</h2>
-			          </div> <!-- /.col -->
-			          <div class="col-sm-6">
-			            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id sollicitudin urna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Proin a tincidunt ipsum, eu pellentesque ante. Suspendisse laoreet nibh at libero gravida pharetra. Morbi dapibus consectetur erat at vestibulum.</p>
-			            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id sollicitudin urna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Proin a tincidunt ipsum, eu pellentesque ante. Suspendisse laoreet nibh at libero gravida pharetra. Morbi dapibus consectetur erat at vestibulum.</p>
-			            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id sollicitudin urna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Proin a tincidunt ipsum, eu pellentesque ante. Suspendisse laoreet nibh at libero gravida pharetra. Morbi dapibus consectetur erat at vestibulum.</p>
-			          </div> <!-- /.col -->
-			          <div class="col-sm-6">
-			             <img class="img-responsive" src="<?php bloginfo('stylesheet_directory'); ?>/img/7.jpg" />
-			          </div> <!-- /.col -->
-			        </div> <!-- /.row -->
-			    </div> <!-- /.container -->
-	        </section> 
-	        <?php if ( have_posts() ) : ?>
-	    	<section>
-	    		<div class="container">
-			        <div class="row front-page-section highlight-section">
-			          <div class="col-md-12">
-			            <h2 class="section-title">Needle Therapy Blog</h2>
-			          </div> <!-- /.col -->
-			          <div class="col-md-6">
-			          	<?php 
+	<body class="index">
+		<div id="page-wrapper">
+
+			<?php get_template_part( 'template-parts/menu', 'front' );?>
+
+			<!-- Banner -->
+				<section id="banner">
+
+					<!--
+						".inner" is set up as an inline-block so it automatically expands
+						in both directions to fit whatever's inside it. This means it won't
+						automatically wrap lines, so be sure to use line breaks where
+						appropriate (<br />).
+					-->
+					<div class="inner">
+
+						<header>
+							<h2>Needle Therapy</h2>
+						</header>
+						<p><strong>Acupuncture</strong><br />
+						and<br />
+						<strong>nutrition</strong>
+						</p>
+						<footer>
+							<ul class="buttons vertical">
+								<li><a href="#main" class="button fit scrolly">Tell Me More</a></li>
+							</ul>
+						</footer>
+
+					</div>
+
+				</section>
+
+			<!-- Main -->
+				<article id="main">
+
+					<header class="special container">
+						<span class="icon fa-heart-o"></span>
+						<h2>Acupuncture and Nutrition</h2>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id sollicitudin urna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Proin a tincidunt ipsum, eu pellentesque ante. Suspendisse laoreet nibh at libero gravida pharetra. Morbi dapibus consectetur erat at vestibulum. <a href="http://html5up.net/license">Creative Commons Attribution 3.0</a> license. Have fun!</p>
+					</header>
+
+					<!-- One -->
+						<section class="wrapper style2 container special-alt">
+							<div class="row 50%">
+								<div class="8u 12u(narrower)">
+
+									<header>
+										<h2>About Acupuncture</h2>
+									</header>
+									<p>Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu comteger ut fermentum lorem. Lorem ipsum dolor sit amet. Sed tristique purus vitae volutpat ultrices. eu elit eget commodo. Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu commodo.</p>
+									<footer>
+										<ul class="buttons">
+											<li><a href="#" class="button">Find Out More</a></li>
+										</ul>
+									</footer>
+
+								</div>
+								<div class="4u 12u(narrower) important(narrower)">
+
+									<ul class="featured-icons">
+										<li><span class="icon fa-tree"><span class="label">Feature 1</span></span></li>
+										<li><span class="icon fa-user"><span class="label">Feature 2</span></span></li>
+										<li><span class="icon fa-venus-mars"><span class="label">Feature 3</span></span></li>
+										<li><span class="icon fa-plus-square"><span class="label">Feature 4</span></span></li>
+										<li><span class="icon fa-heart"><span class="label">Feature 5</span></span></li>
+										<li><span class="icon fa-user-md"><span class="label">Feature 6</span></span></li>
+									</ul>
+
+								</div>
+							</div>
+						</section>
+
+					<!-- Two -->
+						<section class="wrapper style1 container special">
+							<div class="row">
+								<div class="4u 12u(narrower)">
+
+									<section>
+										<span class="icon featured fa-check"></span>
+										<header>
+											<h3>Acupuncture</h3>
+										</header>
+										<p>Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu commodo suscipit dolor nec nibh. Proin a ullamcorper elit, et sagittis turpis. Integer ut fermentum.</p>
+									</section>
+
+								</div>
+								<div class="4u 12u(narrower)">
+
+									<section>
+										<span class="icon featured fa-check"></span>
+										<header>
+											<h3>Facial Acupuncture</h3>
+										</header>
+										<p>Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu commodo suscipit dolor nec nibh. Proin a ullamcorper elit, et sagittis turpis. Integer ut fermentum.</p>
+									</section>
+
+								</div>
+								<div class="4u 12u(narrower)">
+
+									<section>
+										<span class="icon featured fa-check"></span>
+										<header>
+											<h3>Nutritional Therapy</h3>
+										</header>
+										<p>Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu commodo suscipit dolor nec nibh. Proin a ullamcorper elit, et sagittis turpis. Integer ut fermentum.</p>
+									</section>
+
+								</div>
+							</div>
+						</section>
+
+					<!-- Three -->
+						<section class="wrapper style3 container special">
+
+							<header class="major">
+								<h2>Needle Therapy Blog</h2>
+							</header>
+
+							<div class="row">
+								<div class="6u 12u(narrower)">
+
+									<section>
+										<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+										<header>
+											<h3>Article 1</h3>
+										</header>
+										<p>Sed tristique purus vitae volutpat commodo suscipit amet sed nibh. Proin a ullamcorper sed blandit. Sed tristique purus vitae volutpat commodo suscipit ullamcorper sed blandit lorem ipsum dolore.</p>
+									</section>
+
+								</div>
+								<div class="6u 12u(narrower)">
+
+									<section>
+										<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
+										<header>
+											<h3>Article 2</h3>
+										</header>
+										<p>Sed tristique purus vitae volutpat commodo suscipit amet sed nibh. Proin a ullamcorper sed blandit. Sed tristique purus vitae volutpat commodo suscipit ullamcorper sed blandit lorem ipsum dolore.</p>
+									</section>
+
+								</div>
+							</div>
+							<div class="row">
+								<div class="6u 12u(narrower)">
+
+									<section>
+										<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+										<header>
+											<h3>Article 3</h3>
+										</header>
+										<p>Sed tristique purus vitae volutpat commodo suscipit amet sed nibh. Proin a ullamcorper sed blandit. Sed tristique purus vitae volutpat commodo suscipit ullamcorper sed blandit lorem ipsum dolore.</p>
+									</section>
+
+								</div>
+								<div class="6u 12u(narrower)">
+
+									<section>
+										<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
+										<header>
+											<h3>Article 4</h3>
+										</header>
+										<p>Sed tristique purus vitae volutpat commodo suscipit amet sed nibh. Proin a ullamcorper sed blandit. Sed tristique purus vitae volutpat commodo suscipit ullamcorper sed blandit lorem ipsum dolore.</p>
+									</section>
+
+								</div>
+							</div>
+
+							<footer class="major">
+								<ul class="buttons">
+									<li><a href="#" class="button">See More</a></li>
+								</ul>
+							</footer>
+
+						</section>
+
+				</article>
+
+			<!-- CTA -->
+				<section id="cta">
+
+					<header>
+						<h2>Ready to do <strong>something</strong>?</h2>
+						<p>Proin a ullamcorper elit, et sagittis turpis integer ut fermentum.</p>
+					</header>
+					<footer>
+						<ul class="buttons">
+							<li><a href="#" class="button special">Contact me</a></li>
+							<li><a href="#" class="button">Mailing list</a></li>
+						</ul>
+					</footer>
+
+				</section>
+
+
+
+			        
+			          	<?php /*
 			  			$my_query = new WP_Query( array( 'posts_per_page' => 2, 'cat' => ( get_cat_ID( 'featured' ) * -1 ) ) );
 						while ( $my_query->have_posts() ) : $my_query->the_post();
 					   		get_template_part( 'template-parts/post', 'preview' );?>
@@ -78,23 +209,7 @@
 							if ( $post->ID == $do_not_duplicate ) continue; 
 							get_template_part( 'template-parts/post', 'preview' );
 						endwhile; 
+						*/
 						?>
-			          </div> <!-- /.col -->
-			        </div> <!-- /.row -->
-			    </div> <!-- /.container -->
-	        </section> 
-	        <?php endif; ?>
-	        <section>
-	        	<div class="container">
-	        		<div class="row front-page-section"> 
-			          <div class="col-md-8 col-md-offset-2 text-center">
-				        <img id="about-me-image" class="img-responsive img-circle" src="<?php bloginfo('stylesheet_directory'); ?>/img/ellie.jpg" />
-			            <h2 class="section-title">About Eleanor</h2>
-			            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id sollicitudin urna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Proin a tincidunt ipsum, eu pellentesque ante. Suspendisse laoreet nibh at libero gravida pharetra. Morbi dapibus consectetur erat at vestibulum.</p>
-			          </div> <!-- /.col -->
-			        </div> <!-- /.row -->
-	    		</div> <!-- /.container -->
-	    	</section>
-	   	</div> <!-- /.container-fluid -->
-	</main>
+			          
    <?php get_footer(); ?>
