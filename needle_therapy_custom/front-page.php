@@ -13,14 +13,13 @@
 						automatically wrap lines, so be sure to use line breaks where
 						appropriate (<br />).
 					-->
+
 					<div class="inner">
 
 						<header>
-							<h2>Needle Therapy</h2>
+							<h2><?php bloginfo("name"); ?></h2>
 						</header>
-						<p><strong>Acupuncture</strong><br />
-						and<br />
-						<strong>nutrition</strong>
+						<p><strong><?php bloginfo("description"); ?></strong>
 						</p>
 						<footer>
 							<ul class="buttons vertical">

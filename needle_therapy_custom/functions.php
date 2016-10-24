@@ -77,4 +77,34 @@ function custom_excerpt_length( $length ) {
 }
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
+function nt_custom_title() {
+
+	if ( is_home() && ! is_front_page() ) { 
+        return single_post_title('', FALSE);
+    } elseif ( is_category() or is_tax() ) {
+        return single_cat_title('', FALSE);
+    } elseif ( is_post_type_archive() ) {
+      return post_type_archive_title('', FALSE);
+    } elseif ( is_archive() ) {
+       return __( 'Archive ', 'needletherapy' ). '<small>' . esc_html( get_the_archive_title() ) . '</small>' ;
+    } elseif ( is_search() ) {
+        return  __( 'Search Results for: ', 'needletherapy' ). '<small>' . esc_html( get_search_query() ) . '</small>' ;
+    } 
+    elseif ( is_404() ) {
+    	return "Err... something's not right here";
+    }else {
+        return get_the_title(); 
+    } 
+}
+
+function nt_register_nav_menus() {
+	register_nav_menus( 
+	    array(
+	        'main_menu' => 'Main Menu',
+	    )
+	);
+}
+add_action( 'after_setup_theme', 'nt_register_nav_menus' );
+
+
 ?>

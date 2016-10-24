@@ -1815,6 +1815,8 @@ Text Domain: needletherapy
 		.image.featured {
 			display: block;
 			margin: 0 0 2em 0;
+			width: 100%;
+			height: auto;
 		}
 
 			.image.featured img {
@@ -2277,7 +2279,11 @@ Text Domain: needletherapy
 					background: rgba(188, 202, 206, 0.15);
 				}
 
-				#header nav ul li.current > a {
+				#header nav ul li.current > a,
+				#header nav ul li.current_page_item > a,
+				#header nav ul li.current_page_parent > a,
+				#header nav ul li.current-menu-parent  > a
+				{
 					font-weight: 900;
 				}
 
@@ -3206,4 +3212,19 @@ Text Domain: needletherapy
 				height: 34px;
 			}
 
+	}
+
+/* Joe's additions */
+
+	.post-preview {
+		border-bottom: #dedede 1px solid;
+		margin-bottom: 4em;
+	}
+
+	.post-preview nav {
+		margin-bottom: 2em;
+	}
+
+	.post-preview .button.special {
+		min-width: 12em;
 	}
