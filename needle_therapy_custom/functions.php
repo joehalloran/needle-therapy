@@ -26,6 +26,11 @@ function needleTherapy_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'needleTherapy_scripts' );
 
+////////////////////////////////////////////////////////////////////
+// include Theme-options.php for Admin Theme settings
+////////////////////////////////////////////////////////////////////
+
+   include 'theme-options.php';
 
 
 ####### Theme set-up function #############
@@ -105,6 +110,19 @@ function nt_register_nav_menus() {
 	);
 }
 add_action( 'after_setup_theme', 'nt_register_nav_menus' );
+
+
+// TODO ADD HOOK HERE
+register_sidebar(
+    array(
+    'name' => 'Right Sidebar',
+    'id' => 'right-sidebar',
+    'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+    'after_widget' => '</aside>',
+    'before_title' => '<h3>',
+    'after_title' => '</h3>',
+));
+
 
 
 ?>

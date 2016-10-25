@@ -39,7 +39,7 @@
 									<!-- Sidebar -->
 										<div class="sidebar">
 											<?php //get the right sidebar ?>
-									        <?php get_sidebar( 'right' ); ?>
+									        <?php dynamic_sidebar( 'Right Sidebar' ); ?>
 										</div>
 
 								</div>
