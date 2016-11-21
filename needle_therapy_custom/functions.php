@@ -7,7 +7,7 @@ function needleTherapy_scripts() {
     // Register and load jquery in footer
     wp_register_script( 'jquery', ("https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"), false, NULL, true );
 	// Enqueue custom js:
-	wp_enqueue_script( 'needletherapy-js',  get_template_directory_uri() . '/js/needletherapy.js', array( 'jquery' ), '1.0.3', true );
+	// wp_enqueue_script( 'needletherapy-js',  get_template_directory_uri() . '/js/needletherapy.js', array( 'jquery' ), '1.0.3', true );
 
 	wp_enqueue_script( 'nt-dropotron-js',  get_template_directory_uri() . '/js/jquery.dropotron.min.js', array( 'jquery' ), '1.0.3', true );
 
@@ -81,6 +81,13 @@ function custom_excerpt_length( $length ) {
 	return 40;
 }
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
+// Replaces the excerpt "Read More" text by a link
+function new_excerpt_more($more) {
+       global $post;
+	return '...<br /><a class="moretag" href="'. get_permalink($post->ID) . '"> Read the full article</a>';
+}
+add_filter('excerpt_more', 'new_excerpt_more');
 
 function nt_custom_title() {
 

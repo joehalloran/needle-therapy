@@ -9,7 +9,7 @@
 				<article id="main">
 					<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 						<header class="special container">
-							<span class="icon fa-mobile"></span>
+							<span class="icon"><img class="site-icon" src="<?php bloginfo('stylesheet_directory'); ?>/images/acupuncture-needles-final-small.png"></span>
 							<h2><?php the_title(); ?></h2>
 						</header>
 

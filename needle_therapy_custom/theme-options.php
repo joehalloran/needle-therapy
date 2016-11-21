@@ -11,8 +11,6 @@
     }
     add_action( 'admin_menu', 'nt_theme_options_menu' );
 
-    add_action( 'admin_bar_menu', 'toolbar_link_to_nt_options', 999 );
-
     function toolbar_link_to_nt_options( $wp_admin_bar ) {
         $args = array(
             'id'    => 'needle_therapy_theme_options',
@@ -23,6 +21,7 @@
         );
         $wp_admin_bar->add_node( $args );
     }
+    add_action( 'admin_bar_menu', 'toolbar_link_to_nt_options', 999 );
 
 ////////////////////////////////////////////////////////////////////
 // Add admin.css enqueue
@@ -34,98 +33,15 @@
     add_action('admin_enqueue_scripts', 'nt_theme_style');
 
 ////////////////////////////////////////////////////////////////////
-// Custom background theme support
-////////////////////////////////////////////////////////////////////
-
-    $defaults = array(
-        'default-color'          => '',
-        'default-image'          => '',
-        'wp-head-callback'       => '_custom_background_cb',
-        'admin-head-callback'    => '',
-        'admin-preview-callback' => ''
-    );
-    add_theme_support( 'custom-background', $defaults );
-
-////////////////////////////////////////////////////////////////////
-// Custom header theme support
-////////////////////////////////////////////////////////////////////
-
-    register_default_headers( array(
-        'wheel' => array(
-            'url' => '%s/images/defaultlogo.png',
-            'thumbnail_url' => '%s/images/defaultlogo.png',
-            'description' => __( 'Your Business Name', 'needletherapy' )
-        ))
-
-    );
-
-    $defaults = array(
-        'default-image'          => get_template_directory_uri() . '/images/defaultlogo.png',
-        'width'                  => 300,
-        'height'                 => 100,
-        'flex-height'            => true,
-        'flex-width'             => true,
-        'default-text-color'     => '000',
-        'header-text'            => true,
-        'uploads'                => true,
-        'wp-head-callback'       => '',
-        'admin-head-callback'    => '',
-        'admin-preview-callback' => 'nt_admin_header_image',
-    );
-    add_theme_support( 'custom-header', $defaults );
-
-    function nt_admin_header_image() { ?>
-
-        <div id="headimg">
-            <?php
-            $color = get_header_textcolor();
-            $image = get_header_image();
-
-            if ( $color && $color != 'blank' ) :
-                $style = ' style="color:#' . $color . '"';
-            else :
-                $style = ' style="display:none"';
-            endif;
-            ?>
-
-
-            <?php if ( $image ) : ?>
-                <img src="<?php echo esc_url( $image ); ?>" alt="" />
-            <?php endif; ?>
-            <div class="dm_header_name_desc">
-            <h1><a id="name"<?php echo $style; ?> onclick="return false;" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
-            <div id="desc"<?php echo $style; ?>><?php bloginfo( 'description' ); ?></div>
-
-            </div>
-        </div>
-
-    <?php }
-
-    function custom_header_text_color () {
-        if ( get_header_textcolor() != 'blank' ) { ?>
-            <style>
-               .custom-header-text-color { color: #<?php echo get_header_textcolor(); ?> }
-            </style>
-    <?php }
-    }
-
-    add_action ('wp_head', 'custom_header_text_color');
-
-////////////////////////////////////////////////////////////////////
 // Register our settings options (the options we want to use)
 ////////////////////////////////////////////////////////////////////
 
     $nt_options = array(
-        'nt_intro_text' => true,
-        'nt_about_text' => true,
-        'nt_product_one_title' => 3,
-        'nt_product_one_text' => 3,
-        'nt_product_two_title' => 3,
-        'nt_product_two_text' => 3,
-        'nt_product_three_title' => 3,
-        'nt_product_three_text' => 3,
-        'show_header' => true,
-        'show_postmeta' => true
+        'nt_intro_text' => "add text in settings",
+        'nt_about_text' => "add text in settings",
+        'nt_acu_text' => "add text in settings",
+        'nt_facial_text' => "add text in settings",
+        'nt_nutrition_text' => "add text in settings",
     );
 
 
@@ -134,8 +50,6 @@
     }
 
     add_action ('admin_init', 'nt_register_settings');
-    $dm_settings = get_option( 'nt_options', $nt_options );
-
 
 ////////////////////////////////////////////////////////////////////
 // Validate Options
@@ -143,7 +57,7 @@
 
     function nt_validate_options( $input ) {
 
-        global $dm_options;
+        global $nt_options;
 
         $settings = get_option( 'nt_options', $nt_options );
 
@@ -159,6 +73,9 @@
         //     $input['show_header'] = ( $input['show_header'] == 1 ? 1 : 0 );
         // }
 
+        //USE WP_KSES FOR VALIDATION TO ALLOW BASIC HTML TAGS
+        
+
         return $input;
     }
 
@@ -173,7 +90,7 @@
     }
 
         //get our global options
-        global $dm_options, $dm_sidebar_sizes, $developer_uri;
+        global $nt_options;
 
         //get the logo
         $logo = get_template_directory_uri() . '/images/defaultlogo.png'; ?>
@@ -211,45 +128,31 @@
 
                     <tr valign="top"><th scope="row"><?php _e('Intro Text','needletherapy') ;?></th>
                         <td>
-                            <textarea rows="4" cols="50" id="intro_text" name="nt_options[nt_intro_text]"><?php echo 'Put current value text here'; ?></textarea>
+                            <textarea rows="4" cols="50" id="intro_text" name="nt_options[nt_intro_text]"><?php echo $settings['nt_intro_text']; ?></textarea>
                         </td>
                     </tr>
                     <tr valign="top"><th scope="row"><?php _e('About Text','needletherapy') ;?></th>
                         <td>
-                            <textarea rows="4" cols="50" id="about_text" name="nt_options[nt_about_text]"><?php echo 'Put current value text here'; ?></textarea>
+                            <textarea rows="4" cols="50" id="about_text" name="nt_options[nt_about_text]"><?php echo $settings['nt_about_text']; ?></textarea>
                         </td>
                     </tr>
-                    <tr valign="top"><th scope="row"><?php _e('Product One','needletherapy') ;?></th>
-                        <td><label for="product-one-title">Product One Title</label><br />
-                            <input type="text" id="product-one-title" name="nt_options[nt_product_one_title]"/>
+                    <tr valign="top"><th scope="row"><?php _e('Product boxes','needletherapy') ;?></th>
+                        <td>
+                            <label for="product-one-text">Acupuncture text</label><br />
+                            <textarea rows="4" cols="50" id="product-one-text" name="nt_options[nt_acu_text]"><?php echo $settings['nt_acu_text']; ?></textarea>
                             <br />
-                            <label for="product-one-text">Product One Text</label><br />
-                            <textarea rows="4" cols="50" id="product-one-text" name="nt_options[nt_product_one_text]"><?php echo 'Put current value text here'; ?></textarea>
-                        </td>
-                    </tr>
-                    <tr valign="top"><th scope="row"><?php _e('Product Two','needletherapy') ;?></th>
-                        <td><label for="product-two-title">Product Two Title</label><br />
-                            <input type="text" id="product-two-title" name="nt_options[nt_product_two_title]"/>
+                            <label for="product-two-text">Facial acupuncture text</label><br />
+                            <textarea rows="4" cols="50" id="product-two-text" name="nt_options[nt_facial_text]"><?php echo $settings['nt_facial_text']; ?></textarea>
                             <br />
-                            <label for="product-two-text">Product One Text</label><br />
-                            <textarea rows="4" cols="50" id="product-two-text" name="nt_options[nt_product_two_text]"><?php echo 'Put current value text here'; ?></textarea>
+                            <label for="product-one-text">Nutrition text</label><br />
+                            <textarea rows="4" cols="50" id="product-three-text" name="nt_options[nt_nutrition_text]"><?php echo $settings['nt_nutrition_text']; ?></textarea>
                         </td>
                     </tr>
-                    <tr valign="top"><th scope="row"><?php _e('Product Three','needletherapy') ;?></th>
-                        <td><label for="product-three-title">Product Three Title</label><br />
-                            <input type="text" id="product-Three-title" name="nt_options[nt_product_three_title]"/>
-                            <br />
-                            <label for="product-one-text">Product Three Text</label><br />
-                            <textarea rows="4" cols="50" id="product-three-text" name="nt_options[nt_product_three_text]"><?php echo 'Put current value text here'; ?></textarea>
-                        </td>
-                    </tr>
-
-                
-
+            
                 </table>
 
                 <p class="submit">
-                    <input name="Submit" type="submit" class="button-primary" value="<?php esc_attr_e('Save Changes','devdmbootstrap3'); ?>" />
+                    <input name="Submit" type="submit" class="button-primary" value="<?php esc_attr_e('Save Changes','needletherapy'); ?>" />
                 </p>
 
             </form>

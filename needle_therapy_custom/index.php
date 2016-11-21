@@ -9,7 +9,7 @@
 				<article id="main">
 					
 						<header class="special container">
-							<span class="icon fa-mobile"></span>
+							<span class="icon"><img class="site-icon" src="<?php bloginfo('stylesheet_directory'); ?>/images/acupuncture-needles-final-small.png"></span>
 							<h2><?php echo nt_custom_title(); ?></h2>
 						</header>
 
@@ -26,7 +26,7 @@
 													
 												<article class="post-preview">
 													<header>
-														<h3><?php the_title(); ?></h3>
+														<a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
 													</header>
 													<?php the_excerpt(); ?>
 													<nav>
