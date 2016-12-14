@@ -1,0 +1,71 @@
+html, body, header {
+    height: 100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+body {
+    font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+    margin: 0;
+    
+}
+
+header {
+    text-align: center;
+    color: #f8f8f8;
+    background: url('acupuncture-points.jpg') no-repeat 35% center;
+    background-size: cover;
+    padding: 0 20px;
+
+}
+
+h2 {
+    padding-top: 75px;
+    padding-top: 15vh;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+    font-size: 2em;
+}
+
+h1 {
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+    font-size: 3em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+@-moz-keyframes rotate {
+  from {
+    -moz-transform: rotate(0deg);
+  }
+  to { 
+    -moz-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to { 
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+svg {
+    -moz-animation-name:             rotate; 
+    -moz-animation-duration:         4s; 
+    -moz-animation-iteration-count:  infinite;
+    -moz-animation-timing-function: linear;
+
+    -webkit-animation-name:             rotate; 
+    -webkit-animation-duration:         4s; 
+    -webkit-animation-iteration-count:  infinite;
+    -webkit-animation-timing-function: linear;
+}

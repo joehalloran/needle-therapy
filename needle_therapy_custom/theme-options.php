@@ -46,7 +46,8 @@
 
 
     function nt_register_settings() {
-        register_setting( 'nt_theme_options', 'nt_options', 'nt_validate_options' );
+        $args = array('sanitize_callback' => 'nt_validate_options', );
+        register_setting( 'nt_theme_options', 'nt_options', 'nt_validate_options');
     }
 
     add_action ('admin_init', 'nt_register_settings');
@@ -57,25 +58,16 @@
 
     function nt_validate_options( $input ) {
 
-        global $nt_options;
+        $input['nt_intro_text'] = wp_kses_post($input['nt_intro_text']);
 
-        $settings = get_option( 'nt_options', $nt_options );
+        $input['nt_about_text'] = wp_kses_post($input ['nt_about_text']);
 
-        // EXAMPLES _ JOE TO EDIT
-        // $prev = $settings['right_sidebar_width'];
-        // if ( !array_key_exists( $input['right_sidebar_width'], $dm_sidebar_sizes ) ) {
-        //     $input['right_sidebar_width'] = $prev;
-        // }
+        $input['nt_acu_text'] = wp_kses_post($input['nt_acu_text']);
 
-        // if ( ! isset( $input['show_header'] ) ) {
-        //     $input['show_header'] = null;
-        // } else {
-        //     $input['show_header'] = ( $input['show_header'] == 1 ? 1 : 0 );
-        // }
+        $input['nt_facial_text'] = wp_kses_post($input['nt_facial_text']);
 
-        //USE WP_KSES FOR VALIDATION TO ALLOW BASIC HTML TAGS
+        $input['nt_nutrition_text'] = wp_kses_post($input['nt_nutrition_text']);
         
-
         return $input;
     }
 
