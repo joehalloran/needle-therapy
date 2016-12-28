@@ -1831,6 +1831,11 @@ Text Domain: needletherapy
 		position: relative;
 	}
 
+	.icon .front-page-icon {
+		width: 80px;
+		height: auto;
+	}
+
 		.icon:before {
 			-moz-osx-font-smoothing: grayscale;
 			-webkit-font-smoothing: antialiased;
@@ -2513,7 +2518,7 @@ Text Domain: needletherapy
 		background-attachment: scroll, scroll, scroll, fixed;
 		background-color: #645862;
 		background-image: url("images/light-tl.svg"), url("images/light-tr.svg"), url("images/overlay.png"), url("images/acupuncture-points.jpg");
-		background-position: top left, top right, top left, bottom center;
+		background-position: top left, top right, top left, 10px;
 		background-repeat: no-repeat, no-repeat, repeat, no-repeat;
 		background-size: 25em, 25em, auto, cover;
 		color: #fff;

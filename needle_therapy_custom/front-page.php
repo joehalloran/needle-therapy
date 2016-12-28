@@ -70,7 +70,7 @@
 								<div class="4u 12u(narrower)">
 
 									<section>
-										<span class="icon fa-ravelry"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/acupuncture-needles-final-small.png"></span>
+										<span class="icon fa-ravelry"><img class="front-page-icon" src="<?php bloginfo('stylesheet_directory'); ?>/images/acupuncture-needles-final-small.png"></span>
 										<header>
 											<h3>Acupuncture</h3>
 										</header>
@@ -84,7 +84,7 @@
 								<div class="4u 12u(narrower)">
 
 									<section>
-										<span class="icon"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/facial-acupuncture-final-small-bw.png"></span>
+										<span class="icon"><img class="front-page-icon" src="<?php bloginfo('stylesheet_directory'); ?>/images/facial-acupuncture-final-small-bw.png"></span>
 										<header>
 											<h3>Facial Acupuncture</h3>
 										</header>
@@ -98,7 +98,7 @@
 								<div class="4u 12u(narrower)">
 
 									<section>
-										<span class="icon fa-ravelry"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/fruit-bowl-final-small-bw.png"></span>
+										<span class="icon fa-ravelry"><img class="front-page-icon" src="<?php bloginfo('stylesheet_directory'); ?>/images/fruit-bowl-final-small-bw.png"></span>
 										<header>
 											<h3>Nutritional Therapy</h3>
 										</header>
@@ -156,18 +156,12 @@
 
 			<!-- CTA -->
 				<section id="cta">
-
-					<header>
-						<h2>Ready to do <strong>something</strong>?</h2>
-						<p>Proin a ullamcorper elit, et sagittis turpis integer ut fermentum.</p>
-					</header>
 					<footer>
 						<ul class="buttons">
 							<li><a href="/contact/" class="button special">Contact me</a></li>
 							<!-- <li><a href="#" class="button">Mailing list</a></li> -->
 						</ul>
 					</footer>
-
 				</section>
 
 			          
