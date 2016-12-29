@@ -1831,7 +1831,7 @@ Text Domain: needletherapy
 		position: relative;
 	}
 
-	.icon .front-page-icon {
+	.icon > .front-page-icon {
 		width: 80px;
 		height: auto;
 	}

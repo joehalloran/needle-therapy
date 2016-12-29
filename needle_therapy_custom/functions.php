@@ -81,6 +81,13 @@ function custom_excerpt_length( $length ) {
 	return 40;
 }
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+  
+
+function excerpt_character_limit($excerpt) {
+// Take the existing content and return a subset of it
+	return substr($excerpt, 0, 220)."...";
+}
+
 
 // Replaces the excerpt "Read More" text by a link
 function new_excerpt_more($more) {

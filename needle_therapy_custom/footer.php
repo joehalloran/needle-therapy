@@ -1,7 +1,7 @@
 		<footer id="footer">
 
 			<ul class="icons">
-				<li><a href="#" class="icon circle fa-twitter"><span class="label">Twitter</span></a></li>
+				<li><a href="https://twitter.com/NeedleTherapy" class="icon circle fa-twitter"><span class="label">Twitter</span></a></li>
 				<li><a href="#" class="icon circle fa-facebook"><span class="label">Facebook</span></a></li>
 			</ul>
 

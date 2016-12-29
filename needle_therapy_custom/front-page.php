@@ -52,7 +52,7 @@
 									<p><?php echo $customText['nt_about_text']; ?></p>
 									<footer>
 										<ul class="buttons">
-											<li><a href="#" class="button">Find Out More</a></li>
+											<li><a href="/about-eleanor/" class="button">Find Out More</a></li>
 										</ul>
 									</footer>
 
@@ -76,7 +76,7 @@
 										</header>
 										<p><?php echo $customText['nt_acu_text']; ?></p>
 										<ul class="buttons">
-											<li><a href="#" class="button special">Learn More</a></li>
+											<li><a href="/acupuncture/" class="button special">Learn More</a></li>
 										</ul>
 									</section>
 
@@ -90,7 +90,7 @@
 										</header>
 										<p><?php echo $customText['nt_facial_text']; ?></p>
 										<ul class="buttons">
-											<li><a href="#" class="button special">Learn More</a></li>
+											<li><a href="/facial-acupuncture/" class="button special">Learn More</a></li>
 										</ul>
 									</section>
 
@@ -104,7 +104,7 @@
 										</header>
 										<p><?php echo $customText['nt_nutrition_text']; ?></p>
 										<ul class="buttons">
-											<li><a href="#" class="button special">Learn More</a></li>
+											<li><a href="/nutrition/" class="button special">Learn More</a></li>
 										</ul>
 									</section>
 
@@ -131,13 +131,17 @@
 							   		<div class="6u 12u(narrower)">
 
 										<section>
-											<a href="<?php the_permalink(); ?>" class="image featured"><?php the_post_thumbnail(); ?></a>
+											<!-- <a href="<?php the_permalink(); ?>" class="image featured"><?php the_post_thumbnail(); ?></a> -->
 											<header>
 												<a href="<?php the_permalink(); ?>">
 													<h3><?php the_title(); ?></h3>
 												</a>
 											</header>
-											<?php the_excerpt(); ?>
+											<p>	
+												<?php echo excerpt_character_limit(get_the_excerpt()); ?>
+												<br />
+												<a class="moretag" href="<?php the_permalink(); ?>">Read the full article</a>
+											</p>
 										</section>
 
 									</div>
