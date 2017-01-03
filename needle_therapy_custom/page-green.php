@@ -1,6 +1,10 @@
-<?php get_header(); ?>
+<?php 
+/* Template Name: Green Page */ 
+
+get_header(); 
+?>
 	
-	<body class="no-sidebar">
+	<body class="no-sidebar green-page">
 		<div id="page-wrapper">
 
 			<?php get_template_part( 'template-parts/menu', 'normal' );?>

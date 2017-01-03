@@ -3246,3 +3246,23 @@ Text Domain: needletherapy
 		margin-left: auto;
 		margin-right: auto;
 	}
+
+	img.alignright{
+		float: right;
+		margin-left: 20px;
+		margin-bottom: 20px;
+	}
+
+	img.alignleft{
+		float: left;
+		margin-right: 20px;
+		margin-bottom: 20px;
+	}
+
+	.green-page #main {
+		background-color: #83d3c9;
+	}
+
+	.green-page .page-title {
+		color: #fff;
+	}

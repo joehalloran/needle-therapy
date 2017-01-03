@@ -119,34 +119,51 @@
 								<h2>Needle Therapy Blog</h2>
 							</header>
 
-							<div class="row">
-								<?php 
-					  			$my_query = new WP_Query( 
-					  				array( 
-					  					'posts_per_page' => 4, 
-					  					'category_name' => 'featured',
-					  					) 
-					  				);
-								while ( $my_query->have_posts() ) : $my_query->the_post(); ?>
-							   		<div class="6u 12u(narrower)">
+							
+							<?php 
+				  			$my_query = new WP_Query( 
+				  				array( 
+				  					'posts_per_page' => 4, 
+				  					'category_name' => 'featured',
+				  					) 
+				  				);
 
-										<section>
-											<!-- <a href="<?php the_permalink(); ?>" class="image featured"><?php the_post_thumbnail(); ?></a> -->
-											<header>
-												<a href="<?php the_permalink(); ?>">
-													<h3><?php the_title(); ?></h3>
-												</a>
-											</header>
-											<p>	
-												<?php echo excerpt_character_limit(get_the_excerpt()); ?>
-												<br />
-												<a class="moretag" href="<?php the_permalink(); ?>">Read the full article</a>
-											</p>
-										</section>
+				  			$loopCount = 0;
 
-									</div>
-							    <?php endwhile; ?>
-							</div>
+							while ( $my_query->have_posts() ) : $my_query->the_post(); 
+
+							if ( $loopCount % 2 == 0 ) {
+								echo '<div class="row">';
+							}
+							?>
+								
+						   		<div class="6u 12u(narrower)">
+
+									<section>
+										<!-- <a href="<?php the_permalink(); ?>" class="image featured"><?php the_post_thumbnail(); ?></a> -->
+										<header>
+											<a href="<?php the_permalink(); ?>">
+												<h3><?php the_title(); ?></h3>
+											</a>
+										</header>
+										<p>	
+											<?php echo excerpt_character_limit(get_the_excerpt()); ?>
+											<br />
+											<a class="moretag" href="<?php the_permalink(); ?>">Read the full article</a>
+										</p>
+									</section>
+
+								</div>
+
+							<?php		
+							if ( $loopCount % 2 == 1 ) {
+								echo '</div>';
+							}    
+
+							$loopCount ++;
+
+							endwhile; 
+							?>
 
 							<footer class="major">
 								<ul class="buttons">
